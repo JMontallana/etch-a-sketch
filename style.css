@@ -4,10 +4,52 @@
     box-sizing: border-box;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 3rem;
+}
+
+.mode {
+    padding: 1rem;
+    color: green;
+}
+
 .board {
     width: 500px;
     height: 500px;
     display: grid;
+    background-color: white;
+    box-shadow: inset 5px 5px 15px rgba(0,0,0,0.15),
+    inset 5px 5px 15px rgba(0,0,0,0.15),
+    5px 5px 15px rgba(0,0,0,0.15),
+    5px 5px 15px rgba(0,0,0,0.15);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: .5rem;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.error {
+    text-align: center;
+    padding: 1rem;
 }
 
 footer {
