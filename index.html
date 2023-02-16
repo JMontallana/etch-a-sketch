@@ -8,8 +8,23 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <div class="container"></div>
-    <script src="script.js"></script>
+    <div class="container">
+        <div class="title">Etch-A-Sketch</div>
+        <div class="content">
+            <div class="board"></div>
+            <div class="buttons">
+                <button>Black</button>
+                <button>White</button>
+                <button>Rainbow</button>
+                <button>Erase</button>
+            </div>
+            <div>
+                <input type="number" placeholder="size of board" value="16" onchange="changeSize(this.value)">
+                <button>Set Size</button>
+            </div>
+        </div>
+    </div>
     <footer>&copy Jeffry Montallana Theodinproject</footer>
+    <script src="script.js"></script>
 </body>
 </html>

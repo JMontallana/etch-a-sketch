@@ -1,42 +1,28 @@
-const container = document.querySelector('.container');
+const input = document.querySelector('input');
 
-let sketchContainer;
-let sketch;
+function createDiv(size) {
+    let board = document.querySelector('.board');
+    let squares = board.querySelectorAll('div');
+    squares.forEach((div) => {
+        div.remove();
+    })
+    board.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+    board.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
-//create a div container
-function createSketchContainer() {
-    const sktchCont = document.createElement('div');
-    sketchContainer = sktchCont
-    sketchContainer.classList.add('sketch-container');
-    container.append(sketchContainer);
-}
-
-//create a sketch div
-function createSketchDiv() {
-    const sktchDiv = document.createElement('div');
-    sketch = sktchDiv;
-    sktchDiv.classList.add('sketch-div');
-    sketchContainer.append(sktchDiv);
-}
-
-//run createSketchDiv 16x
-function createSketch() {
-    for(let i = 0; i <= 15; i++) {
-        createSketchDiv();
+    let amount = size * size;
+    for( let i = 1; i <= amount; i++ ) {
+        let square = document.createElement('div');
+        square.style.backgroundColor = 'blue';
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = 'black';
+        })
+        board.append(square)
     }
 }
 
-//run createSketch 16x
-function runCreateSketch() {
-    for( let i = 0; i <= 15; i++) {
-        createSketch();
-    }
+createDiv(16)
+
+function changeSize(input) {
+    createDiv(input);
 }
-
-createSketchContainer();
-runCreateSketch();
-console.log(sketch)
-console.log(sketchContainer)
-
-
 
